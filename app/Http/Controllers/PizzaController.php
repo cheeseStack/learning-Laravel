@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 
 class PizzaController extends Controller
 {
-
+  // // this restricts the Create Page too, which we DO NOT want.
+  // public function __construct(){
+  //     $this->middleware('auth'); 
+  // }
   public function index() {
     // get data from a database
   
