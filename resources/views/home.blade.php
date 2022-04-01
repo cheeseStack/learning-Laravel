@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p><a href="/pizzas">View all pizza orders</a></p>
                 </div>
             </div>
         </div>
