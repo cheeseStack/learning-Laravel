@@ -29,17 +29,17 @@ use App\Http\Controllers\PizzaController;
 // add the Routes baseed on order of operation and precedence required
 
 
-Route::get('/pizzas', [PizzaController::class, 'index'])->middleware('auth');
+Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index')->middleware('auth');
 
-Route::get('/pizzas/create', [PizzaController::class, 'create']);
+Route::get('/pizzas/create', [PizzaController::class, 'create'])->name('pizzas.create');
 
 // set up a Route to POST the data from the /create web form:
-Route::post('/pizzas', [PizzaController::class, 'store']);
+Route::post('/pizzas', [PizzaController::class, 'store'])->name('pizzas.store');
 
-Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->middleware('auth'); // have this LAST so it does not interfere with other page links
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show')->middleware('auth'); // have this LAST so it does not interfere with other page links
 
 //below: delete a pizza (once order has been made)
-Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->middleware('auth');
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->name('pizzas.destroy')->middleware('auth');
 
 
 // deleted to allow register Routes to be removed

@@ -13,7 +13,8 @@
             @endforeach
         </ul> <br>
         <!-- below: delete button -->
-        <form action="/pizzas/{{ $pizza->id }}" method="POST">
+        <!-- <form action="/pizzas/{{ $pizza->id }}" method="POST"> -->
+        <form action="{{ route('pizzas.destroy', $pizza->id)}}" method="POST"><!-- hard code using the route name function -->
             @csrf
             @method('DELETE')
             <button>Complete Order</button>
